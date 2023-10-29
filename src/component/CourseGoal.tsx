@@ -1,12 +1,11 @@
 import { COURSE_GOAL_PROPS } from "../interfacesAndTypes/types";
 
-export default function CourseGoal({title,description}:COURSE_GOAL_PROPS) {
-
+export default function CourseGoal({title,children,id,handleDelete}:COURSE_GOAL_PROPS) {
     return <article>
         <div>
             <h2>{title}</h2>
-            <p>{description}</p>
+            {children}
         </div>
-        <button>Delete</button>
+        <button id={id} onClick={()=>handleDelete(id)}>Delete</button>
     </article>
 }
